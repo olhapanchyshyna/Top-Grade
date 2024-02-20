@@ -42,7 +42,7 @@ export default function StepsList() {
 				return (
 					<div
 						key={item.id}
-						className={`flex flex-col w-[568px] pt-[30px] pr-[140px] pb-[50px] pl-[48px] mb-[30px] rounded-3xl text-white ${item.bg}`}			
+						className={`flex flex-col w-[568px] pt-[30px] pr-[140px] pb-[50px] pl-[48px] mb-[30px] rounded-[32px] text-white ${item.bg}`}
 					>
 						<div
 							className={cn(
@@ -51,7 +51,9 @@ export default function StepsList() {
 						>
 							{item.id}
 						</div>
-						<div className='text-xl font-semibold mb-[16px] max-w-[342px]'>{item.title}</div>
+						<div className='text-xl font-semibold mb-[16px] max-w-[342px]'>
+							{item.title}
+						</div>
 						<Image
 							src='/steps-card-line.svg'
 							width={359}
