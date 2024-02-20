@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { Unbounded } from 'next/font/google'
 
 const unbounded = Unbounded({
@@ -7,12 +8,13 @@ const unbounded = Unbounded({
 })
 
 type H2Props = {
-	text: string
+	text: string,
+	className? : string
 }
 
-export default function H2({ text }: H2Props) {
+export default function H2({ text, className }: H2Props) {
 	return (
-		<h2 className={`text-[56px] leading-[70px] uppercase text-gray-100 ${unbounded.className}`}>
+		<h2 className={cn(`text-[56px] leading-[70px] uppercase text-gray-100 ${unbounded.className}`, className)}>
 			{text}
 		</h2>
 	)
