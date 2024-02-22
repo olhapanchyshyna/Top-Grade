@@ -5,6 +5,9 @@
 .boxShadowImg{
   box-shadow: -22px -14px 55px 0px rgba(51,39,185,0.66);
 }
+.boxShadowBudget{
+  box-shadow: 125px 89px 59px -83px rgba(51,39,185,0.68);
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
