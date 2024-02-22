@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import { Unbounded } from 'next/font/google'
 import Line from './Line'
+import CardContent from './CardContent'
 
 const cardsItem = [
 	{
@@ -51,13 +52,7 @@ export default function StepsList() {
 						>
 							{item.id}
 						</div>
-						<div className='text-lg lg:text-xl font-semibold mb-[16px] max-w-[342px]'>
-							{item.title}
-						</div>
-						<Line className='w-[250px] xl:w-[359px] h-[3px]' />
-						<div className='text-sm lg:text-base font-normal mt-[16px] max-w-[385px]'>
-							{item.description}
-						</div>
+						<CardContent item={item}/>
 					</div>
 				)
 			})}

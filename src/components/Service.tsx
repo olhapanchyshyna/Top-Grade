@@ -4,7 +4,7 @@ import Text from './Text'
 
 export default function Service() {
 	return (
-		<section className='flex flex-col md:flex-row justify-between items-center bg-[#E5EAEB] py-[50px] px-[20px] md:py-[80px] md:px-[40px] lg:py-[120px] lg:px-[98px]'>
+		<section className='flex flex-col md:flex-row justify-between items-center py-[50px] px-[20px] md:py-[80px] md:px-[40px] lg:py-[120px] lg:px-[98px]'>
 			<div className='flex flex-col items-center justify-between md:mr-[30px] order-3 md:order-none'>
 				<H2
 					text='premium service like in Mercedes'
