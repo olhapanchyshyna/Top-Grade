@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { Unbounded } from 'next/font/google'
-import Image from 'next/image'
+import Line from './Line'
 
 const cardsItem = [
 	{
@@ -37,30 +37,25 @@ const unbounded = Unbounded({ subsets: ['latin'] })
 
 export default function StepsList() {
 	return (
-		<div className='flex flex-wrap justify-between mt-[55px] max-w-[1165px] m-auto'>
+		<div className='grid grid-cols-1 md:grid-cols-2 gap-4 justify-between justify-items-center mt-[30px] md:mt-[55px] max-w-[1165px] m-auto'>
 			{cardsItem.map(item => {
 				return (
 					<div
 						key={item.id}
-						className={`flex flex-col w-[568px] pt-[30px] pr-[140px] pb-[50px] pl-[48px] mb-[30px] rounded-[32px] text-white ${item.bg}`}
+						className={`flex flex-col h-[345px] md:h-[370px] xl:h-[320px] w-[320px] lg:w-[430px] xl:w-[568px] py-[30px] md:pt-[30px] md:pb-[50px] px-[40px] xl:pr-[140px] xl:pl-[48px] rounded-[32px] text-white bg-no-repeat bg-cover ${item.bg}`}
 					>
 						<div
 							className={cn(
-								`text-5xl font-light mb-[22px] ${unbounded.className}`
+								`text-4xl lg:text-5xl font-light mb-[22px] ${unbounded.className}`
 							)}
 						>
 							{item.id}
 						</div>
-						<div className='text-xl font-semibold mb-[16px] max-w-[342px]'>
+						<div className='text-lg lg:text-xl font-semibold mb-[16px] max-w-[342px]'>
 							{item.title}
 						</div>
-						<Image
-							src='/steps-card-line.svg'
-							width={359}
-							height={1}
-							alt='white line'
-						/>
-						<div className='text-base font-normal mt-[16px] max-w-[385px]'>
+						<Line className='w-[250px] xl:w-[359px] h-[3px]' />
+						<div className='text-sm lg:text-base font-normal mt-[16px] max-w-[385px]'>
 							{item.description}
 						</div>
 					</div>

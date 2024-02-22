@@ -9,7 +9,7 @@ export default function Subtitle({ text, className }: SubtitleProps) {
 	return (
 		<h3
 			className={cn(
-				`text-[36px] leading-[50px] uppercase text-gray-100 font-extralight`,
+				`text-lg md:text-2xl lg:text-3xl xl:text-4xl lg:leading-[50px] uppercase text-gray-100 font-extralight`,
 				className
 			)}
 		>

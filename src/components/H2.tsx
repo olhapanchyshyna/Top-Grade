@@ -14,7 +14,7 @@ type H2Props = {
 
 export default function H2({ text, className }: H2Props) {
 	return (
-		<h2 className={cn(`text-[56px] leading-[70px] uppercase text-gray-100 ${unbounded.className}`, className)}>
+		<h2 className={cn(`text-2xl sm:text-4xl  md:text-[36px] lg:text-[56px] lg:leading-[75px]  md:leading-[50px] uppercase text-gray-100 ${unbounded.className}`, className)}>
 			{text}
 		</h2>
 	)
