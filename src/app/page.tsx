@@ -1,5 +1,6 @@
 import Advantages from '@/components/Advantages'
 import FirstScreen from '@/components/FirstScreen'
+import Footer from '@/components/Footer'
 import GrowthPoint from '@/components/GrowthPoint'
 import HelpGrowBudget from '@/components/HelpGrowBudget'
 import Recommendations from '@/components/Recommendations'
@@ -18,6 +19,7 @@ export default function Home() {
 			<Advantages/>
 			<Recommendations/>
 			<HelpGrowBudget/>
+			<Footer/>
     </>
 	)
 }
