@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import Logo from './Logo'
 
 const navItems = [
-	'Investments',
-	'Real Estate Catalogue',
-	'Housing selection',
-	'Team',
+	{ name: 'Steps', src: '#steps' },
+	{ name: 'Advantages', src: '#advantages' },
+	{ name: 'Housing selection', src: '#growthPoint' },
+	{ name: 'Recommendations', src: '#recommendations' },
 ]
 
 export default function Footer() {
@@ -13,13 +14,15 @@ export default function Footer() {
 			<div className='hidden lg:flex'>
 				<Logo />
 			</div>
-			<nav className='max-w-[536px] w-full lg:ml-[200px] m-auto'>
-				<ul className='flex flex-col items-center sm:flex-row justify-between max-w-[536px]'>
+			<nav className='max-w-[580px] w-full lg:ml-[200px] m-auto'>
+				<ul className='flex flex-col items-center sm:flex-row justify-between max-w-[580px]'>
 					{navItems.map(item => {
 						return (
-							<li key={item} className='text-gray-100 text-[16px] my-[10px] sm:my-[0px]'>
-								{item}
-							</li>
+							<Link key={item.name} href={item.src}>
+								<li className='text-gray-100 text-[16px] my-[10px] sm:my-[0px]'>
+									{item.name}
+								</li>
+							</Link>
 						)
 					})}
 				</ul>

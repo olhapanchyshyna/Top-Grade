@@ -1,17 +1,20 @@
-const navItems = [
-	'Investments',
-	'Real Estate Catalogue',
-	'Housing selection',
-	'Team',
-]
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import Image from 'next/image'
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+const navItems = [
+	{ name: 'Steps', src: '#steps' },
+	{ name: 'Advantages', src: '#advantages' },
+	{ name: 'Housing selection', src: '#growthPoint' },
+	{ name: 'Recommendations', src: '#recommendations' },
+]
 
 export default function Header() {
 	return (
@@ -20,9 +23,9 @@ export default function Header() {
 				<ul className='hidden lg:flex flex-col justify-between h-[185px]'>
 					{navItems.map(item => {
 						return (
-							<li key={item} className='text-gray-100 text-[16px]'>
-								{item}
-							</li>
+							<Link key={item.name} href={item.src}>
+								<li className='text-gray-100 text-[16px]'>{item.name}</li>
+							</Link>
 						)
 					})}
 				</ul>
@@ -38,10 +41,39 @@ export default function Header() {
 						</DropdownMenuTrigger>
 						<DropdownMenuContent className='mr-[10px]'>
 							{navItems.map(item => {
-								return <DropdownMenuItem key={item}>{item}</DropdownMenuItem>
+								return (
+									<DropdownMenuItem key={item.name}>
+										<Link href={item.src}>{item.name}</Link>
+									</DropdownMenuItem>
+								)
 							})}
 						</DropdownMenuContent>
 					</DropdownMenu>
+
+					{/* <Drawer>
+						<DrawerTrigger>
+							<Image
+								src='/menu-icon.svg'
+								alt='white line'
+								width={30}
+								height={24}
+							/>
+						</DrawerTrigger>
+						<DrawerContent>
+							<DrawerHeader>
+								<DrawerTitle>Are you absolutely sure?</DrawerTitle>
+								<DrawerDescription>
+									This action cannot be undone.
+								</DrawerDescription>
+							</DrawerHeader>
+							<DrawerFooter>
+								<Button>Submit</Button>
+								<DrawerClose>
+									<Button variant='outline'>Cancel</Button>
+								</DrawerClose>
+							</DrawerFooter>
+						</DrawerContent>
+					</Drawer> */}
 				</ul>
 			</nav>
 		</header>
