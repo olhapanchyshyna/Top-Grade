@@ -1,13 +1,12 @@
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import NavLink from './NavLink'
 
 const navItems = [
 	{ name: 'Steps', src: '#steps' },
@@ -23,9 +22,9 @@ export default function Header() {
 				<ul className='hidden lg:flex flex-col justify-between h-[185px]'>
 					{navItems.map(item => {
 						return (
-							<Link key={item.name} href={item.src}>
+							<NavLink key={item.name} src={item.src}>
 								<li className='text-gray-100 text-[16px]'>{item.name}</li>
-							</Link>
+							</NavLink>
 						)
 					})}
 				</ul>
@@ -43,7 +42,7 @@ export default function Header() {
 							{navItems.map(item => {
 								return (
 									<DropdownMenuItem key={item.name}>
-										<Link href={item.src}>{item.name}</Link>
+										<NavLink src={item.src}>{item.name}</NavLink>
 									</DropdownMenuItem>
 								)
 							})}

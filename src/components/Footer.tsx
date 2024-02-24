@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import Logo from './Logo'
+import NavLink from './NavLink'
 
 const navItems = [
 	{ name: 'Steps', src: '#steps' },
@@ -18,11 +18,11 @@ export default function Footer() {
 				<ul className='flex flex-col items-center sm:flex-row justify-between max-w-[580px]'>
 					{navItems.map(item => {
 						return (
-							<Link key={item.name} href={item.src}>
+							<NavLink key={item.name} src={item.src}>
 								<li className='text-gray-100 text-[16px] my-[10px] sm:my-[0px]'>
 									{item.name}
 								</li>
-							</Link>
+							</NavLink>
 						)
 					})}
 				</ul>

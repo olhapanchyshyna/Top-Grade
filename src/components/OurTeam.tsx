@@ -42,7 +42,7 @@ export default function OurTeam() {
 
 			<Carousel
 				opts={{
-					align: "start",
+					align: 'start',
 					loop: true,
 				}}
 				className='my-[60px] text-white w-full max-w-6xl'
