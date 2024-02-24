@@ -9,7 +9,7 @@ const unbounded = Unbounded({
 
 export default function Advantages() {
 	return (
-		<section id='advantages' className='bg-[#3327B9] rounded-[32px] px-[20px] pt-[50px] pb-[20px] md:pt-[70px] md:pb-[40px] md:px-[40px] lg:py-[70px] lg:px-[70px]'>
+		<section id='advantages' className='bg-[#3327B9] relative max-w-[1260px] m-auto mb-[100px] rounded-[32px] px-[20px] pt-[50px] pb-[20px] md:pt-[70px] md:pb-[40px] md:px-[40px] lg:py-[70px] lg:px-[70px]'>
 			<H2 text='We act in your interests' />
 			<div
 				className={`uppercase text-gray-100 font-extralight text-xl sm:text-2xl lg:text-[32px] ${unbounded.className}`}
