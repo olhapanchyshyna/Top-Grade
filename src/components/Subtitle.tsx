@@ -1,19 +1,19 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
 type SubtitleProps = {
-	text: string
-	className?: string
-}
+  text: string;
+  className?: string;
+};
 
 export default function Subtitle({ text, className }: SubtitleProps) {
-	return (
-		<h3
-			className={cn(
-				`text-lg md:text-2xl lg:text-3xl xl:text-4xl lg:leading-[50px] uppercase text-gray-100 font-extralight`,
-				className
-			)}
-		>
-			{text}
-		</h3>
-	)
+  return (
+    <h3
+      className={cn(
+        `text-lg font-extralight uppercase text-gray-100 md:text-2xl lg:text-3xl lg:leading-[50px] xl:text-4xl`,
+        className,
+      )}
+    >
+      {text}
+    </h3>
+  );
 }

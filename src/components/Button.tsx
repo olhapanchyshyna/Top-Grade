@@ -1,12 +1,19 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
 type ButtonProps = {
-	text: string
-	className?: string
-}
+  text: string;
+  className?: string;
+};
 
 export default function Button({ text, className }: ButtonProps) {
-	return (
-		<button className={cn(`text-white text-base md:text-lg w-[314px] h-[61px] text-center rounded-[100px] border-white border`, className)}>{text}</button>
-	)
+  return (
+    <button
+      className={cn(
+        `h-[61px] w-[314px] rounded-[100px] border border-white text-center text-base text-white md:text-lg`,
+        className,
+      )}
+    >
+      {text}
+    </button>
+  );
 }

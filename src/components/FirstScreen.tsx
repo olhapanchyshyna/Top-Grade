@@ -1,21 +1,24 @@
-import H2 from './H2'
-import Header from './Header'
-import Logo from './Logo'
-import Subtitle from './Subtitle'
-import DinamicImage from './DinamicImage'
+import DinamicImage from "./DinamicImage";
+import H2 from "./H2";
+import Header from "./Header";
+import Logo from "./Logo";
+import Subtitle from "./Subtitle";
 
 export default function FirstScreen() {
-	return (
-		<section className="flex flex-col lg:flex-row justify-between container relative bg-[url('/main-bg.png')] bg-no-repeat bg-cover h-[680px] min-[430px]:h-[760px] sm:h-[800px] lg:h-[744px] pl-[40px]">
-			<div className='flex justify-between flex-col max-w-[671px] pt-[30px] lg:pt-[80px] pb-[20px] lg:pb-[62px]'>
-				<Logo />
-				<div className='mt-[50px] items-normal lg:items-center lg:mt-[140px] xl:mt-[170px] flex flex-col'>
-					<H2 text='we find housing' />
-					<Subtitle text='that meets your requirements' className='text-center max-w-[400px] mt-[15px] lg:mt-[30px]'/>
-				</div>
-				<Header/>
-			</div>
-			<DinamicImage/>
-		</section>
-	)
+  return (
+    <section className="container relative flex h-[680px] flex-col justify-between bg-[url('/main-bg.png')] bg-cover bg-no-repeat pl-[40px] min-[430px]:h-[760px] sm:h-[800px] lg:h-[744px] lg:flex-row">
+      <div className="flex max-w-[671px] flex-col justify-between pb-[20px] pt-[30px] lg:pb-[62px] lg:pt-[80px]">
+        <Logo />
+        <div className="items-normal mt-[50px] flex flex-col lg:mt-[140px] lg:items-center xl:mt-[170px]">
+          <H2 text="we find housing" />
+          <Subtitle
+            text="that meets your requirements"
+            className="mt-[15px] max-w-[400px] text-center lg:mt-[30px]"
+          />
+        </div>
+        <Header />
+      </div>
+      <DinamicImage />
+    </section>
+  );
 }
