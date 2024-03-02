@@ -1,4 +1,5 @@
-import CardContent from "./CardContent";
+import CardContent from './CardContent'
+
 
 const cardsItem = [
   {
