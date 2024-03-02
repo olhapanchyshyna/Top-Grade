@@ -30,7 +30,6 @@ export default async function OurTeam() {
       >
         <CarouselContent className="-ml-1">
           {cardsItem.map((item: any) => {
-            console.log(item)
             return (
               <CarouselItem
                 key={item.profession}

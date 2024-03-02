@@ -5,18 +5,17 @@ export async function getPointCards() {
     query: `query getPointCards{
 			posts(where: {categoryName: "cards", orderby: {field: NAME_IN, order: DESC}}) {
 				nodes {
-					cards {
+					pointCards {
 						bgColor
 						btn
-						cardscontent
-						cardstitle
+						title
+						content
 						imgAlt
 						cardImg {
 							node {
 								sourceUrl
 							}
 						}
-						
 					}
 				}
 			}
@@ -25,7 +24,7 @@ export async function getPointCards() {
 
   const resJson = await graphqlRequest(query);
   const allPosts = resJson.data.posts;
-
+	// console.log(allPosts.nodes)
   return allPosts?.nodes;
 }
 
@@ -35,10 +34,10 @@ export async function getRoutinCards() {
 			posts(where: {categoryName: "routine-cards"}) {
 				nodes {
 					routineCard {
-						descr
-						cardtitle
-						cardid
 						cardBg
+						cardid
+						cardtitle
+						descr
 						cardBgImg {
 							node {
 								sourceUrl
