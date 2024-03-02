@@ -10,29 +10,6 @@ import Image from "next/image";
 import H2 from "./H2";
 import Line from './Line'
 
-const cardsItem = [
-  {
-    id: 1,
-    title: "Name",
-    description: "Customer Service Department",
-  },
-  {
-    id: 2,
-    title: "Name",
-    description: "Analytics department",
-  },
-  {
-    id: 3,
-    title: "Name",
-    description: "Support department",
-  },
-  {
-    id: 4,
-    title: "Name",
-    description: "Department",
-  },
-];
-
 export default async function OurTeam() {
   const allCards = await getOurTeamCards(); // Получение данных
   const cardsItem = allCards.map((node: any) => node.ourTeam); // Извлечение массива карточек (cards)
