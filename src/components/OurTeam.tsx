@@ -5,9 +5,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { getOurTeamCards } from "@/lib/posts";
 import Image from "next/image";
-import CardContent from "./CardContent";
 import H2 from "./H2";
+import Line from './Line'
 
 const cardsItem = [
   {
@@ -28,11 +29,14 @@ const cardsItem = [
   {
     id: 4,
     title: "Name",
-    description: "department",
+    description: "Department",
   },
 ];
 
-export default function OurTeam() {
+export default async function OurTeam() {
+  const allCards = await getOurTeamCards(); // Получение данных
+  const cardsItem = allCards.map((node: any) => node.ourTeam); // Извлечение массива карточек (cards)
+
   return (
     <section className="bg-[#111827] px-[20px] py-[50px] md:px-[40px] md:py-[80px] lg:px-[98px] lg:py-[130px]">
       <H2 text="selected the best" className="" />
@@ -48,20 +52,27 @@ export default function OurTeam() {
         className="my-[60px] w-full max-w-6xl text-white"
       >
         <CarouselContent className="-ml-1">
-          {cardsItem.map((item) => {
+          {cardsItem.map((item: any) => {
+            console.log(item)
             return (
               <CarouselItem
-                key={item.id}
+                key={item.profession}
                 className="flex flex-col items-center pl-6 md:basis-1/2 lg:basis-1/3 lg:items-start"
               >
                 <Image
-                  src="/man.png"
+                  src={item.img.node.sourceUrl}
                   alt="man"
                   width={450}
                   height={580}
                   className="mx-auto mb-[32px] max-w-[300px] rounded-[32px] lg:w-full lg:max-w-none"
                 />
-                <CardContent item={item} />
+                <div className="mb-[16px] max-w-[342px] text-lg font-semibold lg:text-xl">
+                  {item.name}
+                </div>
+                <Line className="h-[3px] w-[250px] xl:w-[359px]" />
+                <div className="mt-[16px] max-w-[385px] text-sm font-normal lg:text-base">
+                  {item.profession}
+                </div>
               </CarouselItem>
             );
           })}
