@@ -18,8 +18,12 @@ export default async function PointList() {
       {cardsItem.map((item: any, i: number) => {
         return (
           <Card
-            key={item.cardstitle}
-            className={`mb-[20px] flex h-[450px] w-[300px] flex-col justify-between rounded-[32px] md:mb-[0px] md:h-[490px] md:w-[320px] lg:w-[355px] bg-[${item.bgColor}]  `}
+            key={i}
+            className={`mb-[20px] flex h-[450px] w-[300px] flex-col justify-between rounded-[32px] md:mb-[0px] md:h-[490px] md:w-[320px] lg:w-[355px]`} 
+            style={{
+              background: item.bgColor ? item.bgColor : "",
+              backgroundImage: `url(${item.bgImg?.node.sourceUrl})`,
+            }}
           >
             <Image
               src={

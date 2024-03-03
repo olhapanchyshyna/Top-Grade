@@ -16,13 +16,13 @@ export default async function FirstScreen() {
         <div className="items-normal mt-[50px] flex flex-col lg:mt-[140px] lg:items-center xl:mt-[170px]">
           {contents.map((item: any) => {
             return (
-              <>
+              <div key={item.mainSubtitle}>
                 <H2 text={item.mainTitle} />
                 <Subtitle
                   text={item.mainSubtitle}
                   className="mt-[15px] max-w-[400px] text-center lg:mt-[30px]"
                 />
-              </>
+              </div>
             );
           })}
         </div>

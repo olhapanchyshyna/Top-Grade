@@ -6,16 +6,21 @@ export async function getPointCards() {
 			posts(where: {categoryName: "cards", orderby: {field: NAME_IN, order: DESC}}) {
 				nodes {
 					pointCards {
-						bgColor
-						btn
 						title
 						content
-						imgAlt
+						btn
 						cardImg {
 							node {
 								sourceUrl
 							}
 						}
+						bgColor
+						bgImg {
+							node {
+								sourceUrl
+							}
+						}
+						imgAlt
 					}
 				}
 			}

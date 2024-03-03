@@ -16,8 +16,9 @@ export default async function StepsList() {
         return (
           <div
             key={item.cardid}
-            className={`flex h-[345px] w-[320px] flex-col rounded-[32px] bg-cover bg-no-repeat px-[40px] py-[30px] text-white md:h-[370px] md:pb-[50px] md:pt-[30px] lg:w-[430px] xl:h-[320px] xl:w-[568px] xl:pl-[48px] xl:pr-[140px] ${item.cardBg ? `bg-[${item.cardBg}]` : ""}`}
+            className={`flex h-[345px] w-[320px] flex-col rounded-[32px] bg-cover bg-no-repeat px-[40px] py-[30px] text-white md:h-[370px] md:pb-[50px] md:pt-[30px] lg:w-[430px] xl:h-[320px] xl:w-[568px] xl:pl-[48px] xl:pr-[140px]`}
             style={{
+              background: item.cardBg ? item.cardBg : "",
               backgroundImage: `url(${item.cardBgImg?.node.sourceUrl})`,
             }}
           >
