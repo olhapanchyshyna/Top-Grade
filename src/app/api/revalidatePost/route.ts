@@ -21,12 +21,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   try {
   		revalidatePath(path, 'layout');
-  		return new Response("Good", {
+  		return new Response("Success revalidate", {
 				status: 200,
 			});
   }
   catch (error: any) {
-		return new Response("not good", {
+		return new Response("error in src/app/api/revalidatePost/route", {
 			status: 500,
 		});
   }
