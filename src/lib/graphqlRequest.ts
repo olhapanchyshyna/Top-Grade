@@ -1,6 +1,6 @@
 export default async function graphqlRequest(query: { query: string }) {
   const url = "http://localhost:8888/graphql";
-  const headers = { "Content-Type": "application/json" };
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
 
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
     headers["Authorization"] =
@@ -16,4 +16,3 @@ export default async function graphqlRequest(query: { query: string }) {
   const resJson = await res.json();
   return resJson;
 }
- 

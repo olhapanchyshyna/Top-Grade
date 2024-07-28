@@ -10,7 +10,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
   let path = '';
 
   if(type === 'acf-field') {
-  		path = '/' ;
+  		path = '/' ; 
   }
 
   if (secret !== process.env.REVALIDATION_SECRET) {

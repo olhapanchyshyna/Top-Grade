@@ -16,6 +16,5 @@ export async function getFirstScreen() {
 
   const resJson = await graphqlRequest(query);
   const firstScreen = resJson.data.posts;
-
   return firstScreen?.nodes;
 }
